@@ -22,6 +22,7 @@ To begin, the user logs in with a username and password. If the credentials are 
 
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
 
