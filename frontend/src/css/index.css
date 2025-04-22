@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    h1 {
+        @apply text-white text-4xl sm:text-5xl font-bold text-center p-8;
+    }
+    
+    h2 {
+        @apply text-white text-2xl sm:text-3xl font-bold text-center p-3;
+    }
+
+    h3 {
+        @apply text-white text-xl sm:text-2xl font-bold p-3;
+    }
+}
+
+
+@layer components {
+
+    .wrapper {
+        @apply min-h-screen flex flex-col items-center p-4 sm:p-6 bg-gradient-to-br from-gray-900 to-gray-800;        
+    }
+    
+    
+    /* home results container */
+
+    .all-books {
+        @apply max-w-6xl mx-auto p-7 from-gray-900 to-gray-800;
+    }
+
+    .all-books h2 {
+        @apply text-white text-4xl sm:text-3xl font-bold text-center p-3;
+    }
+
+    .all-books ul {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6;
+    }
+
+
+    /* book card */
+
+    .book-card {
+        @apply w-full h-full min-h-[300px] bg-gradient-to-br from-purple-900 to-purple-950 hover:from-purple-700 hover:to-purple-950 p-2.5 rounded-xl flex flex-col items-center transition-transform transform hover:scale-105 flex-shrink-0;
+    }
+
+    .book-card img {
+        @apply w-full max-h-64 rounded-lg object-contain;
+    }
+    
+    .book-card .no-cover {
+        @apply bg-gradient-to-br from-purple-950 to-purple-950 p-3 rounded-lg text-white flex items-center justify-center w-auto h-72;
+    }
+
+    .book-card h2 {
+        @apply text-white text-lg font-semibold text-center;
+    }
+
+    .book-card p {
+        @apply text-sm text-white text-center;
+    }
+
+    .book-card .heart-btn {
+        @apply transition-transform duration-200 hover:scale-125 absolute top-4 right-5;
+    }
+
+    .book-card .modify-reading-list-btn {
+        @apply transition-transform duration-200 hover:scale-125 absolute top-4 left-5;
+    }
+
+    .book-card .description-btn {
+        @apply transition-transform duration-200 hover:scale-125 absolute top-4 text-center translate-x-[-12px];
+    }
+
+    .book-card .book-card-modal-title {
+        @apply bg-white p-1 rounded-lg shadow-lg w-40 flex flex-col text-center text-black;
+    }
+
+    .book-card .book-card-modal-content {
+        @apply bg-white p-1 rounded-lg shadow-lg w-40 flex flex-col gap-1 text-center max-h-40 overflow-y-auto scrollbar-hide;
+    }
+    
+    .description-modal-content {
+        @apply bg-gradient-to-br from-purple-900 to-purple-950 text-white p-1 rounded-lg shadow-lg max-w-2xl flex flex-col gap-0 text-center w-[75vw] h-[75vh] overflow-auto scrollbar-hide;
+    }
+    
+
+    /* search */
+
+    .search-bar {
+        @apply flex bg-white p-0.5 rounded-lg w-full max-w-[300px] mx-auto justify-center items-center mb-8 px-2;
+
+    }
+
+    .search-bar input {
+        @apply w-full text-gray-800 border-none outline-none rounded-lg;
+    }
+
+    .search-bar img {
+        @apply w-5 h-5;
+    }
+
+
+    /* navigation bar */
+
+    .nav-bar {
+        @apply flex flex-wrap sm:flex-nowrap gap-4 items-center justify-between text-white px-4 py-5 w-full max-w-6xl mx-auto;        
+    }
+
+    .navbar-links {
+        @apply flex space-x-8;
+    }
+    
+    .nav-link {
+        @apply text-lg font-semibold hover:text-purple-600 transition-colors;
+    }
+
+
+    /* modals in general and reading list modal */
+
+    .modal-overlay {
+        @apply fixed inset-0 from-purple-900 to-purple-950 items-center justify-center bg-black/10 backdrop-blur-sm flex flex-col gap-2;
+    }
+    
+    .modal-content {
+        @apply bg-gradient-to-br from-purple-900 to-purple-950 p-6 rounded-lg shadow-lg w-96 text-center;
+    }
+    
+    .modal-input {
+        @apply w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900;
+    }
+    
+    .modal-buttons {
+        @apply flex justify-center gap-5 mt-4;
+    }
+    
+    .save-btn {
+        @apply bg-gradient-to-br from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-700 text-white px-3 py-1 rounded-md transition; 
+    }
+    
+    .cancel-btn {
+        @apply bg-gray-300 text-black px-4 py-2 rounded-md hover:bg-gray-400 transition;
+    }
+
+
+    /* reading list */
+
+    .reading-list-btn {
+        @apply px-3 py-2 bg-gradient-to-r from-purple-900 to-purple-950 
+               text-white font-semibold text-lg rounded-lg 
+               transition-all duration-300 transform hover:scale-105 
+               hover:from-purple-700 hover:to-purple-950
+    }
+
+    .slider-container {
+        @apply flex items-center max-w-5xl mx-auto relative;
+    }
+    
+    .reading-list-container {
+        @apply grid grid-flow-col auto-cols-[210px] gap-4 overflow-x-hidden scroll-smooth p-4 mb-3
+    }
+        
+    .arrow {
+        @apply bg-transparent border-none text-2xl cursor-pointer text-white;
+    }
+
+    .left-arrow {
+        @apply absolute left-[-40px];
+    }
+    
+    .right-arrow {
+        @apply absolute right-[-40px];
+    }
+      
+}
