@@ -18,6 +18,14 @@ To begin, the user logs in with a username and password. If the credentials are 
   <img src="media/reading_lists.png" alt="Reading Lists Page" width="350"/>
 </p>
 
+## To Improve
+
+This app serves as a functional prototype and is not production-ready. Key improvements required regarding style, security, and architecture are outlined below:
+- Replace Context+Provider with atoms (Jotai/Recoil/...) for frequently changing state to enable fine-grained re-renders and avoid unnecessary component updates
+- Wrap Open Library and backend API calls in custom hooks, keeping UI components purely presentational
+- Adopt `react-query` for API calls
+- The current JWT authentication stores tokens in localStorage (XSS vulnerable, prototyping only). A better solution would be to rely on cookies (http only)
+
 ## Frontend
 
 ```bash
