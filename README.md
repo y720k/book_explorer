@@ -25,6 +25,8 @@ This app serves as a functional prototype and is not production-ready. Key impro
 - Wrap Open Library and backend API calls in custom hooks, keeping UI components purely presentational
 - Adopt `react-query` for API calls
 - The current JWT authentication stores tokens in localStorage (XSS vulnerable, prototyping only). A better solution would be to rely on cookies (http only)
+- Adopt `useMemo` and `useCallback` where applicable to improve performance
+- Convert to TypeScript for type safety, better developer experience, and maintainability
 
 ## Frontend
 
